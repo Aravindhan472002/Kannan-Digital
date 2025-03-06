@@ -14,7 +14,7 @@ const FrameData = [
     title: "12*8 Frame",
     rating: 5.0,
     color: "White",
-    price: 20,
+    price: 400,
   },
   {
     id: 2,
@@ -22,7 +22,7 @@ const FrameData = [
     title: "12*18 Frame",
     rating: 5.0,
     color: "Red",
-    price: 30,
+    price: 850,
   },
   {
     id: 3,
@@ -30,7 +30,7 @@ const FrameData = [
     title: "Normal Cup",
     rating: 5.0,
     color: "Green",
-    price: 10,
+    price: 350,
   },
   {
     id: 4,
@@ -38,7 +38,7 @@ const FrameData = [
     title: "Normal Cup",
     rating: 5.0,
     color: "Yellow",
-    price: 10,
+    price: 250,
   },
   {
     id: 5,
@@ -46,7 +46,7 @@ const FrameData = [
     title: "Normal Cup",
     rating: 5.0,
     color: "Pink",
-    price: 10,
+    price: 300,
   },
 ];
 
@@ -84,14 +84,14 @@ const FramePage = () => {
                 alt={frame.title}
                 className="h-[220px] w-[150px] object-cover rounded-md"
               />
-              <h3 className="font-semibold text-lg">{frame.title}</h3>
-              <p className="text-sm text-gray-600">Color: {frame.color}</p>
+              <h3 className="font-semibold dark:text-black text-black">{frame.title}</h3>
+              <p className="text-sm text-gray-600 dark:text-gray-700">Color: {frame.color}</p>
               <div className="flex justify-between items-center">
                 <div className="flex items-center gap-1">
                   <FaStar className="text-yellow-400" />
-                  <span>{frame.rating}</span>
+                  <span className="text-black dark:text-black">{frame.rating}</span>
                 </div>
-                <p className="font-semibold">${frame.price}</p>
+                <p className="font-semibold text-black dark:text-black">₹{frame.price}</p>
               </div>
               <button
                 onClick={() => handleOrderClick(frame)}

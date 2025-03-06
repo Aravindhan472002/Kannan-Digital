@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./assets/components/Navbar/Navbar.jsx";
 import Hero from "./assets/components/Hero/Hero.jsx";
@@ -11,10 +11,12 @@ import Subscribe from "./assets/components/Subscribe/Subscribe.jsx";
 import Testimonial from "./assets/components/Testimonials/Testimonial.jsx";
 import Footer from "./assets/components/Footer/Footer.jsx";
 import FramePage from "./assets/components/FramePage/FramePage.jsx";
-import OrderDetails from "./assets/components/OrderDetails/OrderDetail.jsx"; // Corrected Import
+import CupPage from "./assets/components/CupPage/CupPage.jsx";
+import OrderDetails from "./assets/components/OrderDetails/OrderDetail.jsx";
+import CupOrderDetails from "./assets/components/CupPage/CupOrderDetails.jsx";
 
 const App = () => {
-  React.useEffect(() => {
+  useEffect(() => {
     AOS.init({
       offset: 100,
       duration: 800,
@@ -25,13 +27,10 @@ const App = () => {
 
   return (
     <Router>
-      <div
-        className="bg-white dark:bg-gray-900
-      dark:text-white duration-200"
-      >
+      <div className="bg-white dark:bg-gray-900 dark:text-white duration-200">
         <Navbar />
+
         <Routes>
-          {/* Home Page */}
           <Route
             path="/"
             element={
@@ -45,11 +44,13 @@ const App = () => {
               </>
             }
           />
-          {/* Frame Collection Page */}
           <Route path="/frames" element={<FramePage />} />
-          {/* Order Details Page */}
+          <Route path="/cups/:type" element={<CupPage />} />
           <Route path="/order-details" element={<OrderDetails />} />
+          <Route path="/order/:id" element={<CupOrderDetails />} />
+
         </Routes>
+
         <Footer />
       </div>
     </Router>

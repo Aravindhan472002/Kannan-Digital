@@ -3,6 +3,8 @@ import Logo from "../../components/krishna_logo.png";
 import { IoMdSearch } from "react-icons/io";
 import { FaCaretDown, FaCartShopping } from 'react-icons/fa6';
 import DarkMode from './DarkMode';
+import { Link } from 'react-router-dom';
+
 
 const Menu = [
   { id: 1, name: "Home", link: "/#" },
@@ -10,8 +12,8 @@ const Menu = [
 ];
 
 const DropdownLinks2 = [
-  { id: 1, name: "Normal Printing Cup", link: "/#" },
-  { id: 2, name: "Magic Cup", link: "/#" },
+  { id: 1, name: "Normal Printing Cup", link: "/cups/normal" },
+  { id: 2, name: "Magic Cup", link: "/cups/magic" },
 ];
 
 const DropdownLinks3 = [
@@ -22,7 +24,6 @@ const DropdownLinks3 = [
 const DropdownLinks = [
   { id: 1, name: "Trending Products", link: "/#" },
   { id: 2, name: "Best Selling", link: "/#" },
-  { id: 3, name: "Top Rated", link: "/#" },
 ];
 
 const DropdownLinks4 = [
@@ -40,10 +41,10 @@ const Navbar = () => {
       <div className="bg-primary/40 py-3 sm:py-0">
         <div className="container mx-auto flex justify-between items-center px-4">
           {/* Logo */}
-          <a href="#" className="font-bold text-2xl sm:text-3xl flex items-center gap-2">
+          <Link to="/" className="font-bold text-2xl sm:text-3xl flex items-center gap-2">
             <img src={Logo} alt="Logo" className="w-10" />
             Kannan Graphics
-          </a>
+          </Link>
           {/* Search Bar */}
           <div className="relative hidden sm:block">
             <input
@@ -59,7 +60,7 @@ const Navbar = () => {
             className="bg-gradient-to-r from-primary to-secondary text-white py-2 px-6 rounded-full flex items-center gap-2 hover:shadow-lg transition-all"
           >
             Order
-            <FaCartShopping className="text-lg" />
+            <FaCartShopping className="text-lg"/>
           </button>
           {/* Dark Mode */}
           <DarkMode />
@@ -73,12 +74,12 @@ const Navbar = () => {
             {/* Menu Links */}
             {Menu.map((data) => (
               <li key={data.id}>
-                <a
-                  href={data.link}
+                <Link
+                  to={data.link}
                   className="text-gray-700 dark:text-gray-300 hover:text-primary transition-all"
                 >
                   {data.name}
-                </a>
+                </Link>
               </li>
             ))}
             {/* Dropdown Menus */}
@@ -97,12 +98,12 @@ const Navbar = () => {
                   <ul>
                     {dropdown.links.map((item) => (
                       <li key={item.id}>
-                        <a
-                          href={item.link}
+                        <Link
+                          to={item.link}
                           className="block px-4 py-2 hover:bg-primary/20 rounded"
                         >
                           {item.name}
-                        </a>
+                        </Link>
                       </li>
                     ))}
                   </ul>

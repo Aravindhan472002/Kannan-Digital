@@ -1,6 +1,6 @@
 import React from 'react';
-import footerLogo from '../Navbar/dark1.png';
-import Banner from '../Navbar/Frame1.jpg';
+import footerLogo from '../krishna_logo.png';
+import Banner from '../Navbar/FooterImg.jpg';
 import {
     FaFacebook,
     FaInstagram,
@@ -42,7 +42,7 @@ const FooterLinks = [
 
 const Footer = () => {
     return (
-        <div style={BannerImg} className="text-white mb-20">
+        <div style={BannerImg} className="text-black mb-20">
             <div className="container">
                 <div 
                 data-aos="zoom-in" className="grid grid-cols-1 md:grid-cols-3 pv-44 pt-5">
@@ -66,7 +66,7 @@ const Footer = () => {
                                     {FooterLinks.map((link) => (
                                         <li
                                             key={link.title}
-                                            className="cursor-pointer hover:text-primary translate-x-1 duration-300 text-gray-200"
+                                            className="cursor-pointer hover:text-primary translate-x-1 duration-300 text-black"
                                         >
                                             <a href={link.link}>{link.title}</a>
                                         </li>
