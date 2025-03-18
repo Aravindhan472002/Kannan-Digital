@@ -5,7 +5,6 @@ import { FaCaretDown, FaCartShopping } from 'react-icons/fa6';
 import DarkMode from './DarkMode';
 import { Link } from 'react-router-dom';
 
-
 const Menu = [
   { id: 1, name: "Home", link: "/#" },
   { id: 2, name: "Top Rated", link: "/services" },
@@ -19,11 +18,6 @@ const DropdownLinks2 = [
 const DropdownLinks3 = [
   { id: 1, name: "Normal Flex", link: "/#" },
   { id: 2, name: "Quality Flex", link: "/#" },
-];
-
-const DropdownLinks = [
-  { id: 1, name: "Trending Products", link: "/#" },
-  { id: 2, name: "Best Selling", link: "/#" },
 ];
 
 const DropdownLinks4 = [
@@ -87,7 +81,6 @@ const Navbar = () => {
               { name: "Cup Design", links: DropdownLinks2 },
               { name: "Frame Design", links: DropdownLinks4 },
               { name: "Flex Design", links: DropdownLinks3 },
-              { name: "Trending", links: DropdownLinks },
             ].map((dropdown, idx) => (
               <li key={idx} className="relative group">
                 <a href="#" className="flex items-center gap-1 text-gray-700 dark:text-gray-300 hover:text-primary">

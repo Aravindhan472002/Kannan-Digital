@@ -93,7 +93,7 @@ const Products = () => {
                 <img
                   src={data.img}
                   alt={data.title}
-                  className="h-[220px] w-[150px] object-cover rounded-md"
+                  className="h-[150px] w-[150px] object-cover rounded-md"
                 />
                 <div key={data.id} className="space-y-3">
                   <h3 className="font-semibold text-black dark:text-white">
